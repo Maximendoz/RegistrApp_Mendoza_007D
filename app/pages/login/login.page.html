@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" color="warning"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <img src="assets/logoduoc.png" class="img" >
+    <ion-title class="nom">RegistrAPP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+
+    <ion-card-header>
+      <ion-card-title class="titulo">Login</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form [formGroup]="formularioLogin">
+        <ion-item >
+          <ion-label position="floating">Correo: </ion-label>
+          <ion-input formControlName="email" type="email" placeholder="res.martinez@duocuc.cl.." name="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña: </ion-label>
+          <ion-input formControlName="password" type="password" name="password"></ion-input>
+        </ion-item>
+      </form>
+    </ion-card-content>
+    
+  </ion-card>
+
+  <br>
+
+  <ion-button (click)="ingresar()" expand="block" fill="solid" color="success" shape="round" class="but">
+    Ingresar
+  </ion-button>
+
+  <ion-button routerLink="/registro" expand="block" fill="clear" color="primary" shape="round">
+    Registrarse
+  </ion-button>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+  </ion-toolbar>
+</ion-footer>

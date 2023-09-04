@@ -1,0 +1,70 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <img src="assets/logoduoc.png" class="img" >
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" color="warning"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>RegistrAPP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="titulo">Registro</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form [formGroup]="formularioRegistro" (keyup.enter)="guardar()">
+
+        <ion-item>
+          <ion-label position="floating">Nombre:</ion-label>
+          <ion-input type="text" placeholder="Nombre alumno.." name="nombre" formControlName="nombre"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Apellido:</ion-label>
+          <ion-input type="text" placeholder="Apellido alumno.." name="apellido" formControlName="apellido"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Correo:</ion-label>
+          <ion-input type="email" placeholder="res.martinez@duocuc.cl.." name="email" formControlName="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Contraseña:</ion-label>
+          <ion-input type="password" placeholder="" name="password" formControlName="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Confirmar contraseña:</ion-label>
+          <ion-input type="password" placeholder="" name="password" formControlName="confirmacionPassword"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Seleccione una jornada..</ion-label>
+          <ion-select formControlName="jornada">
+            <ion-select-option value="Diurna">Diurna</ion-select-option>
+            <ion-select-option value="Vespertina">Vespertina</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <br>
+
+        <ion-button (click)="guardar()" expand="block" fill="solid" color="success" shape="round">
+          Registrarse
+        </ion-button>
+        
+      </form>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+  </ion-toolbar>
+</ion-footer>
