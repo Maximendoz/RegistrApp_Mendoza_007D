@@ -1,0 +1,48 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Andres",
+      "apellido": "Tribiño",
+      "useremail": "an.tribino@duocuc.cl",
+      "password": "duoc1234",
+      "confirmacionPassword": "duoc1234",
+      "jornada": "vespertina",
+      "role": "alumno",
+      "isactive": true
+    },
+    {
+      "id": 2,
+      "nombre": "Fernando",
+      "apellido": "Torres",
+      "useremail": "fer.torres@profesor.duoc.cl",
+      "password": "maipu2372",
+      "confirmacionPassword": "maipu2372",
+      "jornada": "diurna",
+      "role": "docente",
+      "isactive": true
+    },
+    {
+      "id": 3,
+      "nombre": "raul",
+      "apellido": "martinez",
+      "useremail": "ra.martinez@duocuc.cl",
+      "password": "Raul1234",
+      "confirmacionPassword": "Raul1234",
+      "jornada": "Vespertina",
+      "role": "Alumno",
+      "isactive": true
+    },
+    {
+      "id": 4,
+      "nombre": "arturo",
+      "apellido": "vidal",
+      "useremail": "ar.vidal@duocuc.cl",
+      "password": "Arturo12",
+      "confirmacionPassword": "Arturo12",
+      "jornada": "Vespertina",
+      "role": "Alumno",
+      "isactive": true
+    }
+  ]
+}

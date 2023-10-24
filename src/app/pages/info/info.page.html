@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <img src="assets/logoduoc.png" class="img">
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" color="warning"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>RegistrAPP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">info</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <br>
+  <div class="caja">
+    <img src="assets/qrduoc.png" class="qr">
+  </div>
+  <ion-card class="fondocard">
+    <ion-card-header>
+      <ion-card-title class="colorTitulos">RegistrApp</ion-card-title>
+    </ion-card-header>
+    <ion-card-content style="color:black" class="fondoContent">
+      <P>RegistrAPP es una plataforma que permite que cada alumno registre su propia asistencia atreves de un código.</P> 
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+  </ion-toolbar>
+</ion-footer>
