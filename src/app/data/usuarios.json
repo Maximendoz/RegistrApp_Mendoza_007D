@@ -43,6 +43,17 @@
       "jornada": "Vespertina",
       "role": "Alumno",
       "isactive": true
+    },
+    {
+      "id": 5,
+      "nombre": "pepe",
+      "apellido": "fideo",
+      "useremail": "pe.fideo@profesor.duoc.cl",
+      "password": "fideo1234",
+      "confirmacionPassword": "fideo1234",
+      "jornada": "Diurna",
+      "role": "Docente",
+      "isactive": true
     }
   ]
 }

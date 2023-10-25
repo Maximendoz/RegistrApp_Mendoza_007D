@@ -49,6 +49,14 @@ export class RegistroPage implements OnInit {
   }
 
   crearUsuario() {
+    this.newUsuario.nombre=this.usuarioForm.value.nombre;
+    this.newUsuario.apellido=this.usuarioForm.value.apellido;
+    this.newUsuario.useremail=this.usuarioForm.value.useremail;
+    this.newUsuario.password=this.usuarioForm.value.password;
+    this.newUsuario.confirmacionPassword=this.usuarioForm.value.confirmacionPassword;
+    this.newUsuario.jornada=this.usuarioForm.value.jornada;
+    this.newUsuario.role=this.usuarioForm.value.role;
+    this.newUsuario.isactive=true;
       this.authservice.crearUsuario(this.newUsuario).subscribe();
       this.showToast('Se registró el usuario');
       this.router.navigateByUrl('/login');
