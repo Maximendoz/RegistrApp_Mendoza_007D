@@ -14,34 +14,63 @@
       <ion-card-title class="titulo">Registro</ion-card-title>
     </ion-card-header>
 
-    <form  [formGroup]="usuarioForm" (ngSubmit)="crearUsuario()">
+    <form  [formGroup]="usuarioForm">
 
       <ion-item lines="full">
         <ion-label position="floating">Nombre:</ion-label>
         <ion-input type="text" placeholder="Nombre alumno.." formControlName="nombre"></ion-input>
       </ion-item>
+      <div *ngIf="usuarioForm.get('nombre')?.invalid && (usuarioForm.get('nombre')?.dirty || usuarioForm.get('nombre')?.touched)">
+          <div style="color:red" *ngIf="usuarioForm.get('nombre')?.hasError('required')">
+            El nombre es obligatorio
+          </div>
+          <div style="color:red" *ngIf="usuarioForm.get('nombre')?.hasError('minlength')">
+            El nombre Mínimo de 4 caracteres 
+          </div>
+      </div>
 
 
       <ion-item lines="full">
         <ion-label position="floating">Apellido:</ion-label>
         <ion-input type="text" placeholder="Apellido alumno.." formControlName="apellido"></ion-input>
       </ion-item>
+      <div *ngIf="usuarioForm.get('apellido')?.invalid && (usuarioForm.get('apellido')?.dirty || usuarioForm.get('apellido')?.touched)">
+          <div style="color:red" *ngIf="usuarioForm.get('apellido')?.hasError('required')">
+            El apellido es obligatorio
+          </div>
+          <div style="color:red" *ngIf="usuarioForm.get('apellido')?.hasError('minlength')">
+            El apellido Mínimo de 4 caracteres 
+          </div>
+      </div>
+
 
       <ion-item lines="full">
         <ion-label position="floating">Correo:</ion-label>
         <ion-input type="email" placeholder="res.martinez@duocuc.cl.." formControlName="useremail"></ion-input>
       </ion-item>
+      <div *ngIf="usuarioForm.get('useremail')?.invalid && (usuarioForm.get('useremail')?.dirty || usuarioForm.get('useremail')?.touched)">
+          <div style="color:red" *ngIf="usuarioForm.get('useremail')?.hasError('required')">
+            El Correo es obligatorio
+          </div>
+          <div style="color:red" *ngIf="usuarioForm.get('useremail')?.hasError('email')">
+            El Correo debe ser un correo válido
+          </div>
+      </div>
 
 
       <ion-item lines="full">
         <ion-label position="floating">Contraseña:</ion-label>
         <ion-input type="password" placeholder="" formControlName="password"></ion-input>
       </ion-item>
+      <div *ngIf="usuarioForm.get('password')?.invalid && (usuarioForm.get('password')?.dirty || usuarioForm.get('password')?.touched)">
+          <div style="color:red" *ngIf="usuarioForm.get('password')?.hasError('required')">
+            La contraseña es obligatoria
+          </div>
+          <div style="color:red" *ngIf="usuarioForm.get('password')?.hasError('minlength')">
+            La contraseña Mínimo de 8 caracteres 
+          </div>
+      </div>
 
-      <ion-item lines="full">
-        <ion-label position="floating">Confirmar contraseña:</ion-label>
-        <ion-input type="password" placeholder="" formControlName="confirmacionPassword"></ion-input>
-      </ion-item>
 
       <ion-item lines="full">
         <ion-label position="floating">Seleccione una jornada:</ion-label>
@@ -50,15 +79,15 @@
           <ion-select-option value="Vespertina">Vespertina</ion-select-option>
         </ion-select>
       </ion-item>
-      
 
+      
       <ion-item lines="full">
         <ion-label position="floating">Selecciona el cargo</ion-label>
         <ion-select formControlName="role">
           <ion-select-option value="Alumno">Alumno</ion-select-option>
-          <ion-select-option value="Docente">Docente</ion-select-option>
         </ion-select>
       </ion-item>
+
 
       <ion-row>
         <ion-col>

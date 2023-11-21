@@ -10,52 +10,51 @@ import { Router } from '@angular/router';
 })
 export class InicioPage implements OnInit {
 
-  usuarios= {
-  id:0,
-  nombre: '',
-  apellido: '',
-  useremail: '',
-  password: '',
-  confirmacionPassword: '',
-  jornada: '',
-  role: '',
-  isactive: true}
+  
+  id: any;
 
-  constructor(private authService: AuthService,
+  constructor(public AuthService: AuthService,
     private router: Router,
-    private menuController: MenuController
-    ) { }
+    private menuController: MenuController,
+  ) { this.ObtainStorage(); }
+
+  ionViewWillEnter() {
+    this.id = sessionStorage.getItem('id');
+  }
+
+  getIdFromUrl() {
+    let url = this.router.url;
+    console.log('URL:', url);
+
+    let arr = url.split("/", 3);
+    console.log('Array después de la división:', arr);
+
+    let id = parseInt(arr[2]);
+    console.log('ID obtenido:', id);
+
+    return id;
+  }
 
   ngOnInit() {
 
   }
-  ionViewWillEnter(){
-  this.GetUserById(this.getIdFromUrl());
+
+  Users= {
+    nombre: '',
+    apellido: ''
   }
 
-  getIdFromUrl(){
-    let url=this.router.url;
-    let arr=url.split("/",3);
-    let id = parseInt(arr[2]);
-    return id;
-  }
+  ObtainStorage() {
+    let nombre = sessionStorage.getItem("nombre");
+    let apellido = sessionStorage.getItem("apellido");
 
-  GetUserById(usuarioId:number){
-    this.authService.BuscarUsuarioId(usuarioId).subscribe(
-      (resp:any)=>{
-        this.usuarios={
-          id:resp[0].id,
-          nombre:resp[0].nombre,
-          apellido:resp[0].apellido,
-          useremail:resp[0].useremail,
-          password:resp[0].password,
-          confirmacionPassword:resp[0].confirmacionPassword,
-          jornada:resp[0].jornada,
-          role:resp[0].role,
-          isactive: true
-        }
-      }
-    )
+    if (nombre) {
+      this.Users.nombre = nombre;
+    }
+
+    if (apellido) {
+      this.Users.apellido = apellido;
+    }
   }
 
   mostrarMenu() {

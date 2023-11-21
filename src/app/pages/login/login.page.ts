@@ -18,8 +18,10 @@ export class LoginPage implements OnInit {
   usuario = {
     id: 0,
     nombre: "",
+    apellido:"",
     useremail: "",
     password: "",
+    jornada:"",
     role: "",
     isactive: false
   }
@@ -51,18 +53,24 @@ export class LoginPage implements OnInit {
           this.usuario = {
             id: this.userdata[0].id,
             nombre: this.userdata[0].nombre,
+            apellido: this.userdata[0].apellido,
             useremail: this.userdata[0].useremail,
             password: this.userdata[0].password,
+            jornada: this.userdata[0].jornada,
             role: this.userdata[0].role,
             isactive: this.userdata[0].isactive
           }
           if (this.usuario.password === this.loginForm.value.password) {
             if (this.usuario.isactive) {
+              sessionStorage.setItem('id', this.usuario.id.toString());
               sessionStorage.setItem('useremail', this.usuario.useremail);
+              sessionStorage.setItem('nombre', this.usuario.nombre);
+              sessionStorage.setItem('apellido', this.usuario.apellido);
+              sessionStorage.setItem('jornada', this.usuario.jornada);
               sessionStorage.setItem('role', this.usuario.role);
               sessionStorage.setItem('ingresado', 'true');
               this.showToast('Hola y Bienvenido ' + this.usuario.nombre + '!');
-              this.router.navigateByUrl('/inicio/' + this.usuario.id);
+              this.router.navigateByUrl('/inicio');
             }
             else {
               this.UserInactivo();

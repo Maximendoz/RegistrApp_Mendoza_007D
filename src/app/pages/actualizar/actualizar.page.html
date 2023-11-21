@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <img src="assets/logoduoc.png" class="img" >
+    <ion-title>Actualizar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Actualizar</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <form>
+    <ion-item>
+      <ion-label position="floating">Nuevo Nombre:</ion-label>
+      <ion-input type="text" name="txtNombre" [(ngModel)]="usuario.nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nuevo Apellido:</ion-label>
+      <ion-input type="text" name="txtApellido" [(ngModel)]="usuario.apellido"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nuevo Correo:</ion-label>
+      <ion-input type="email" name="txtCorreo" [(ngModel)]="usuario.useremail"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nueva Contraseña:</ion-label>
+      <ion-input type="password" name="txtPassword" [(ngModel)]="usuario.password"></ion-input> 
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Seleccione una nueva jornada:</ion-label>
+      <ion-select name="txtJornada" [(ngModel)]="usuario.jornada">
+        <ion-select-option value="Diurna">Diurna</ion-select-option>
+        <ion-select-option value="Vespertina">Vespertina</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="updateUsuario()" expand="block" color="success">
+          Actualizar Usuario
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-button routerLink="/inicio" expand="block" color="danger">
+      Cancelar
+    </ion-button>
+
+
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+  </ion-toolbar>
+</ion-footer>

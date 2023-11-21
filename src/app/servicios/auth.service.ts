@@ -4,7 +4,6 @@ import { environment } from 'src/environments/environment';
 import { Users } from '../pages/interfaces/interfaces';
 import { Observable } from 'rxjs';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -22,6 +21,10 @@ export class AuthService {
     return this.httpclient.get<Users>(`${environment.apiUrl}/usuarios/?useremail=${codigo}`);
   }
 
+  GetUserId(codigo:number):Observable<Users>{
+    return this.httpclient.get<Users>(`${environment.apiUrl}/usuarios/?id=${codigo}`);
+  }
+
   crearUsuario(newUsuario: Users):Observable<Users>{
     return this.httpclient.post<Users>(`${environment.apiUrl}/usuarios`, newUsuario);
   }
@@ -32,5 +35,9 @@ export class AuthService {
 
   BuscarUsuarioId(id:number):Observable<Users>{
     return this.httpclient.get<Users>(`${environment.apiUrl}/usuarios/?id=${id}`);
+  }
+
+  ActualizarUsuario(usuario:any):Observable<Users>{
+    return this.httpclient.put<Users>(`${environment.apiUrl}/usuarios/${usuario.id}`, usuario);
   }
 }

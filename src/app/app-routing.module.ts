@@ -10,7 +10,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'inicio/:id',
+    path: 'inicio',
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule),
     canActivate: [AutorizadoGuard]
   },
@@ -30,6 +30,16 @@ const routes: Routes = [
   {
     path: 'info',
     loadChildren: () => import('./pages/info/info.module').then( m => m.InfoPageModule),
+    canActivate: [AutorizadoGuard]
+  },
+  {
+    path: 'perfil/:id',
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule),
+    canActivate: [AutorizadoGuard]
+  },
+  {
+    path: 'actualizar/:id',
+    loadChildren: () => import('./pages/actualizar/actualizar.module').then( m => m.ActualizarPageModule),
     canActivate: [AutorizadoGuard]
   },
   

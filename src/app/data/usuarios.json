@@ -2,11 +2,10 @@
   "usuarios": [
     {
       "id": 1,
-      "nombre": "Andres",
-      "apellido": "Tribiño",
+      "nombre": "lolo",
+      "apellido": "tutanga",
       "useremail": "an.tribino@duocuc.cl",
       "password": "duoc1234",
-      "confirmacionPassword": "duoc1234",
       "jornada": "vespertina",
       "role": "alumno",
       "isactive": true
@@ -17,43 +16,21 @@
       "apellido": "Torres",
       "useremail": "fer.torres@profesor.duoc.cl",
       "password": "maipu2372",
-      "confirmacionPassword": "maipu2372",
       "jornada": "diurna",
-      "role": "docente",
+      "role": "alumno",
       "isactive": true
+    }
+  ],
+  "palabras": [
+    {
+      "id": 1,
+      "username": "cachupin",
+      "palabra": "Duoc Maipu"
     },
     {
-      "id": 3,
-      "nombre": "raul",
-      "apellido": "martinez",
-      "useremail": "ra.martinez@duocuc.cl",
-      "password": "Raul1234",
-      "confirmacionPassword": "Raul1234",
-      "jornada": "Vespertina",
-      "role": "Alumno",
-      "isactive": true
-    },
-    {
-      "id": 4,
-      "nombre": "arturo",
-      "apellido": "vidal",
-      "useremail": "ar.vidal@duocuc.cl",
-      "password": "Arturo12",
-      "confirmacionPassword": "Arturo12",
-      "jornada": "Vespertina",
-      "role": "Alumno",
-      "isactive": true
-    },
-    {
-      "id": 5,
-      "nombre": "pepe",
-      "apellido": "fideo",
-      "useremail": "pe.fideo@profesor.duoc.cl",
-      "password": "fideo1234",
-      "confirmacionPassword": "fideo1234",
-      "jornada": "Diurna",
-      "role": "Docente",
-      "isactive": true
+      "palabra": "Hakuna Matata",
+      "username": "cachupin",
+      "id": 2
     }
   ]
 }
