@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Users } from 'src/app/pages/interfaces/interfaces';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { AuthService } from 'src/app/servicios/auth.service';
+import { AuthService } from 'src/app/servicios/servicio.service';
 import { Router } from '@angular/router';
 import { ToastController, AlertController } from '@ionic/angular';
 
@@ -22,6 +22,9 @@ export class RegistroPage implements OnInit {
     password: "",
     jornada: "",
     role: "",
+    anno: 0,
+    semestre: "",
+    asignatura: "",
     isactive: true
   }
 
@@ -36,7 +39,10 @@ export class RegistroPage implements OnInit {
         'useremail': new FormControl('', [Validators.required, Validators.email]),
         'password': new FormControl('', [Validators.required, Validators.minLength(8)]),
         'jornada': new FormControl('', [Validators.required]),
-        'role': new FormControl('', [Validators.required])
+        'role': new FormControl('', [Validators.required]),
+        'anno': new FormControl('', [Validators.required]),
+        'semestre': new FormControl('', [Validators.required]),
+        'asignatura': new FormControl('', [Validators.required])
       });
     }
 
@@ -51,6 +57,9 @@ export class RegistroPage implements OnInit {
       this.newUsuario.password=this.usuarioForm.value.password;
       this.newUsuario.jornada=this.usuarioForm.value.jornada;
       this.newUsuario.role=this.usuarioForm.value.role;
+      this.newUsuario.anno=this.usuarioForm.value.anno;
+      this.newUsuario.semestre=this.usuarioForm.value.semestre;
+      this.newUsuario.asignatura=this.usuarioForm.value.asignatura;
       this.newUsuario.isactive=true;
       if(this.newUsuario.password === this.usuarioForm.value.password){
         this.authservice.crearUsuario(this.newUsuario).subscribe();

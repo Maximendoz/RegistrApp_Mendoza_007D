@@ -2,12 +2,15 @@
   "usuarios": [
     {
       "id": 1,
-      "nombre": "lolo",
-      "apellido": "tutanga",
+      "nombre": "Andres",
+      "apellido": "Tribiño",
       "useremail": "an.tribino@duocuc.cl",
       "password": "duoc1234",
       "jornada": "vespertina",
-      "role": "alumno",
+      "role": "docente",
+      "anno": "2023",
+      "semestre": "1 semestre",
+      "asignatura": "matematicas",
       "isactive": true
     },
     {
@@ -17,20 +20,37 @@
       "useremail": "fer.torres@profesor.duoc.cl",
       "password": "maipu2372",
       "jornada": "diurna",
-      "role": "alumno",
+      "role": "docente",
+      "anno": "2024",
+      "semestre": "2 semestre",
+      "asignatura": "lenguaje",
       "isactive": true
     }
   ],
   "palabras": [
     {
-      "id": 1,
-      "username": "cachupin",
-      "palabra": "Duoc Maipu"
+      "palabra": "",
+      "useremail": "an.tribino@duocuc.cl",
+      "anno": null,
+      "semestre": "1 semestre",
+      "asignatura": "matematicas",
+      "id": 1
     },
     {
-      "palabra": "Hakuna Matata",
-      "username": "cachupin",
+      "palabra": "se aprendio no se que cosa",
+      "useremail": "an.tribino@duocuc.cl",
+      "anno": null,
+      "semestre": "1 semestre",
+      "asignatura": "matematicas",
       "id": 2
+    },
+    {
+      "palabra": "dfv}ñsdfkgñmslñdfgkhjnlñskdfgjnhlñjkdfgnh",
+      "useremail": "an.tribino@duocuc.cl",
+      "anno": null,
+      "semestre": "1 semestre",
+      "asignatura": "matematicas",
+      "id": 3
     }
   ]
 }

@@ -82,9 +82,35 @@
 
       
       <ion-item lines="full">
-        <ion-label position="floating">Selecciona el cargo</ion-label>
+        <ion-label position="floating">Selecciona el cargo:</ion-label>
         <ion-select formControlName="role">
-          <ion-select-option value="Alumno">Alumno</ion-select-option>
+          <ion-select-option value="Docente">Docente</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+
+      <ion-item lines="full">
+        <ion-label position="floating">Selecciona el Año en curso:</ion-label>
+        <ion-select formControlName="anno">
+          <ion-select-option value="2023">2023</ion-select-option>
+          <ion-select-option value="2024">2024</ion-select-option>
+          <ion-select-option value="2025">2025</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Selecciona el Semestre:</ion-label>
+        <ion-select formControlName="semestre">
+          <ion-select-option value="primer">1° Semestre</ion-select-option>
+          <ion-select-option value="segundo">2° Semestre</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Selecciona el asignatura:</ion-label>
+        <ion-select formControlName="asignatura">
+          <ion-select-option value="lenguaje">lenguaje</ion-select-option>
+          <ion-select-option value="matemaricas">matemaricas</ion-select-option>
         </ion-select>
       </ion-item>
 

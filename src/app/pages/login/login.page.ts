@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
-import { AuthService } from 'src/app/servicios/auth.service';
+import { AuthService } from 'src/app/servicios/servicio.service';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
@@ -23,6 +23,9 @@ export class LoginPage implements OnInit {
     password: "",
     jornada:"",
     role: "",
+    anno: 0,
+    semestre: "",
+    asignatura: "",
     isactive: false
   }
 
@@ -58,16 +61,20 @@ export class LoginPage implements OnInit {
             password: this.userdata[0].password,
             jornada: this.userdata[0].jornada,
             role: this.userdata[0].role,
+            anno: this.userdata[0].anno,
+            semestre: this.userdata[0].semestre,
+            asignatura: this.userdata[0].asignatura,
             isactive: this.userdata[0].isactive
           }
           if (this.usuario.password === this.loginForm.value.password) {
             if (this.usuario.isactive) {
-              sessionStorage.setItem('id', this.usuario.id.toString());
               sessionStorage.setItem('useremail', this.usuario.useremail);
               sessionStorage.setItem('nombre', this.usuario.nombre);
               sessionStorage.setItem('apellido', this.usuario.apellido);
               sessionStorage.setItem('jornada', this.usuario.jornada);
               sessionStorage.setItem('role', this.usuario.role);
+              sessionStorage.setItem('semestre', this.usuario.semestre);
+              sessionStorage.setItem('asignatura', this.usuario.asignatura);
               sessionStorage.setItem('ingresado', 'true');
               this.showToast('Hola y Bienvenido ' + this.usuario.nombre + '!');
               this.router.navigateByUrl('/inicio');

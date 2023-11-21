@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController, } from '@ionic/angular';
-import { AuthService } from 'src/app/servicios/auth.service';
+import { AuthService } from 'src/app/servicios/servicio.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,6 +18,9 @@ export class PerfilPage implements OnInit {
     useremail:'',
     jornada:'',
     role:'',
+    anno:'',
+    semestre:'',
+    asignatura:'',
     isactive: false
   }
 
@@ -59,6 +62,9 @@ export class PerfilPage implements OnInit {
           useremail: resp[0].useremail,
           jornada: resp[0].jornada,
           role: resp[0].role,
+          anno: resp[0].anno,
+          semestre: resp[0].semestre,
+          asignatura: resp[0].asignatura,
           isactive: resp[0].isactive
         }
       }

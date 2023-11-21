@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/servicios/auth.service';
+import { AuthService } from 'src/app/servicios/servicio.service';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-actualizar',
@@ -18,6 +19,9 @@ export class ActualizarPage implements OnInit {
     password: '',
     jornada: '',
     role: '',
+    anno: '',
+    semestre: '',
+    asignatura: '',
     isactive: false
   }
 
@@ -57,6 +61,9 @@ export class ActualizarPage implements OnInit {
           password: resp[0].password,
           jornada: resp[0].jornada,
           role: resp[0].role,
+          anno: resp[0].anno,
+          semestre: resp[0].semestre,
+          asignatura: resp[0].asignatura,
           isactive: resp[0].isactive
         }
       }

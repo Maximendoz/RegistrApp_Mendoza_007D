@@ -1,10 +1,12 @@
-.titulo{
-    text-align: center;
-    color: #000000;
-}
-
 .img{
     width: 115px;
     height: 50px;
-    margin-left: 110px;
+    margin: 0 auto;
+    display: block;
 }
+
+.card{
+    margin: 0 auto;
+    display: block;
+    width: 50%;
+}   

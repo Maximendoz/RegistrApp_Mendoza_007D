@@ -8,7 +8,7 @@
 
   <img src="assets/logoduoc.png" class="img" >
   
-  <ion-card>
+  <ion-card class="card">
     <ion-card-header>
       <ion-card-title class="titulo">Login</ion-card-title>
     </ion-card-header>
@@ -46,7 +46,7 @@
       </form>
     </ion-card-content>
     
-    <ion-row>
+    <ion-row class="but">
       <ion-col>
         <ion-button (click)="login()" [disabled]="!loginForm.valid" expand="block" fill="solid" color="success" shape="round">
           Ingresar

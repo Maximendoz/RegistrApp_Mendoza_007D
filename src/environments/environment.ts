@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://registrapp.servecounterstrike.com:3300'
+  apiUrl: 'http://localhost:3300'
 };
 
 /*

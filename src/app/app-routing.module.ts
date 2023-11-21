@@ -1,18 +1,13 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AutorizadoGuard } from './guards/autorizado.guard';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  
+
   {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
-  },
-  {
-    path: 'inicio',
-    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule),
-    canActivate: [AutorizadoGuard]
   },
   {
     path: 'login',
@@ -23,26 +18,35 @@ const routes: Routes = [
     loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
   {
-    path: 'menu',
-    loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule),
-    canActivate: [AutorizadoGuard]
+    path: 'inicio',
+    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'info',
     loadChildren: () => import('./pages/info/info.module').then( m => m.InfoPageModule),
-    canActivate: [AutorizadoGuard]
-  },
-  {
-    path: 'perfil/:id',
-    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule),
-    canActivate: [AutorizadoGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'actualizar/:id',
     loadChildren: () => import('./pages/actualizar/actualizar.module').then( m => m.ActualizarPageModule),
-    canActivate: [AutorizadoGuard]
+    canActivate: [AuthGuard]
   },
-  
+  {
+    path: 'menu',
+    loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'perfil/:id',
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'qr',
+    loadChildren: () => import('./pages/qr/qr.module').then( m => m.QrPageModule),
+    canActivate: [AuthGuard]
+  },
 ];
 
 @NgModule({

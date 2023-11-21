@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
-    <img src="assets/logoduoc.png" class="img">
+    <img src="assets/logoduoc.png" class="img" >
     <ion-buttons slot="start">
       <ion-button (click)="mostrarMenu()">
         <ion-icon slot="icon-only" name="menu-outline" color="warning"></ion-icon>
@@ -14,22 +14,19 @@
 
   <ion-card class="inicio">
     <ion-card-header>
-      <div *ngIf="AuthService.IsLogged()">
-        <ion-card-title class="colorTitulos" style="color:rgb(255, 255, 255)">Bienvenid@:
-          {{Users.nombre}}&nbsp;{{Users.apellido}}</ion-card-title>
-      </div>
-
+      <ion-card-title class="colorTitulos" style="color:rgb(255, 255, 255)">Bienvenid@: {{Users.nombre}}&nbsp;{{Users.apellido}}</ion-card-title>
     </ion-card-header>
   </ion-card>
   <br>
-  <ion-button expand="block" fill="solid" color="success" shape="round" class="but"><ion-icon name="camera"></ion-icon>
-    Abrir camara
+  <ion-button [routerLink]="['/qr']" expand="block" fill="solid" color="success" shape="round" class="but">
+    Generar QR
   </ion-button>
 
   <ion-button class="botone" expand="block" shape="round" [routerLink]="['/perfil', id]"><ion-icon
-      name="person"></ion-icon>
-    Perfil
-  </ion-button>
+    name="person"></ion-icon>
+  Perfil
+</ion-button>
+
 </ion-content>
 
 <ion-footer>
