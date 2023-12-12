@@ -6,8 +6,8 @@
       "apellido": "tutanga",
       "useremail": "an.tribino@duocuc.cl",
       "password": "duoc1234",
-      "jornada": "vespertina",
-      "role": "alumno",
+      "jornada": "Vespertina",
+      "role": "Alumno",
       "isactive": true
     },
     {
@@ -16,8 +16,18 @@
       "apellido": "Torres",
       "useremail": "fer.torres@profesor.duoc.cl",
       "password": "maipu2372",
-      "jornada": "diurna",
-      "role": "alumno",
+      "jornada": "Diurna",
+      "role": "Alumno",
+      "isactive": true
+    },
+    {
+      "id": 3,
+      "nombre": "raul",
+      "apellido": "papa",
+      "useremail": "ra.papa@duocuc.cl",
+      "password": "papa1234",
+      "jornada": "Vespertina",
+      "role": "Alumno",
       "isactive": true
     }
   ],
